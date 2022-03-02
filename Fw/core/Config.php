@@ -1,5 +1,5 @@
 <?php
-namespace Core;
+namespace Fw\Core;
 
 class Config
 {

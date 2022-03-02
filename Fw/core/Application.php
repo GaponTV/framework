@@ -1,14 +1,21 @@
 <?php
 namespace Fw\Core;
 
-class Application
+final class Application
 {
     private static $__components = [];
     private static $pager = null;
     private static $instance = null;
     private static $template = null;
 
-    private function __construct() { }
+    private function __construct()
+    {
+
+    }
+
+    private function __clone() {}
+
+    private function __wakeup() {}
 
     public static function getInstance()
     {
