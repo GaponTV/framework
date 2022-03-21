@@ -1,11 +1,15 @@
 <?php
 namespace Fw\Core;
 
+
+require_once __DIR__ . "/pattern/Singltone.php";
+
 class Config
 {
+    use pattern\Singltone;
     private $configs = [];
 
-    public function __construct()
+    private function __construct()
     {
         $this->configs = require __DIR__ . "/../config.php";
     }

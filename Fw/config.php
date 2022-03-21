@@ -1,7 +1,8 @@
 <?php
+if(!defined("CORE_CONNECTION") || CORE_CONNECTION !== true) die();
 return  [
-    "db" =>
+    "template" =>
         [
-            "login" => "smth"
+            "id" => "default"
         ]
 ];
