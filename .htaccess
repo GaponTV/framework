@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)$ /Fw/$1
