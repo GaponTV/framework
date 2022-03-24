@@ -1,6 +1,6 @@
 <?php
 
-namespace Fw\Core\pattern;
+namespace Fw\Core\Pattern;
 trait Singltone
 {
     private static $instance = null;

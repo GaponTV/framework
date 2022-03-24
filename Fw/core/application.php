@@ -1,8 +1,5 @@
 <?php
 namespace Fw\Core;
-require_once __DIR__ . "/pattern/Singltone.php";
-require_once __DIR__ . "/Config.php";
-require_once __DIR__ . "/Page.php";
 
 final class Application
 {
@@ -14,9 +11,8 @@ final class Application
 
     private function __construct()
     {
-        $config = Config::getInstance();
         $this->pager = Page::getInstance();
-        $this->template = __DIR__ . "/../templates/". $config->get("template/id");
+        $this->template = $_SERVER['DOCUMENT_ROOT'] . "/templates/" . Config::get("template/id");
     }
 
     public function header()
@@ -38,10 +34,9 @@ final class Application
     private function endBuffer()
     {
         $buffer = ob_get_contents();
-        $this->restartBuffer();
+        ob_end_clean();
         $replaces = $this->pager->getAllReplace();
         echo str_replace(array_keys($replaces), array_values($replaces), $buffer);
-        ob_end_flush();
     }
 
     private function restartBuffer()
