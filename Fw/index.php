@@ -2,7 +2,16 @@
 session_start();
 require_once "init.php";
 $app->header();
+
+$app->includeComponent(
+    "fw:component",
+    "default",
+    [
+        "message" => "123"
+    ]
+);
 ?>
+
 
 <pre>
     -------- 18.03.2022 --------
